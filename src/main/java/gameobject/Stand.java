@@ -1,4 +1,4 @@
-package GameObjects;
+package gameobject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,6 @@ public class Stand {
 
     public void putDiscOnStand(int discValue){
         standAsArray.add(discValue);
-        //System.out.println(discValue);
     }
 
     public void printStand(){

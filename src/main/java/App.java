@@ -1,4 +1,4 @@
-import GameObjects.Stand;
+import gameobject.Stand;
 
 import java.util.Scanner;
 
