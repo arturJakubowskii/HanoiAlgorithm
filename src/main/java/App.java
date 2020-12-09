@@ -1,3 +1,4 @@
+import gameobject.Disc;
 import gameobject.Stand;
 
 import java.util.Scanner;
@@ -10,14 +11,14 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
 
+        Disc disc = new Disc();
+
         Stand stand1 = new Stand(1);
         Stand stand2 = new Stand(2);
         Stand stand3 = new Stand(3);
 
-        stand1.setDiscs();
+        stand1.setDiscValues();
 
-        int disc = 0;
-        int standNumber = 0;
         int standNumberForDisc = 0;
         int standNumberToTakeDisc = 0;
 
@@ -30,18 +31,18 @@ public class App {
 
             switch (standNumberToTakeDisc){
                 case 1:
-                    aaaaa(stand1, stand2, stand3);
-                    disc = stand1.takeDiscFromStand();
+                    printStands(stand1, stand2, stand3);
+                    disc.setValue(stand1.takeDiscFromStand());
                     break;
 
                 case 2:
-                    aaaaa(stand1, stand2, stand3);
-                    disc = stand2.takeDiscFromStand();
+                    printStands(stand1, stand2, stand3);
+                    disc.setValue(stand2.takeDiscFromStand());
                     break;
 
                 case 3:
-                    aaaaa(stand1, stand2, stand3);
-                    disc = stand3.takeDiscFromStand();
+                    printStands(stand1, stand2, stand3);
+                    disc.setValue(stand3.takeDiscFromStand());
                     break;
             }
 
@@ -50,24 +51,24 @@ public class App {
 
             switch (standNumberForDisc){
                 case 1:
-                    stand1.printStand();
-                    stand1.putDiscOnStand(disc);
+                    printStands(stand1, stand2, stand3);
+                    stand1.putDiscOnStand(disc.getValue());
                     stand1.checkIfDiscsAreSequential();
-                    disc = 0;
+                    disc.setValue(0);
                     break;
 
                 case 2:
-                    stand2.printStand();
-                    stand2.putDiscOnStand(disc);
+                    printStands(stand1, stand2, stand3);
+                    stand2.putDiscOnStand(disc.getValue());
                     stand2.checkIfDiscsAreSequential();
-                    disc = 0;
+                    disc.setValue(0);
                     break;
 
                 case 3:
-                    stand3.printStand();
-                    stand3.putDiscOnStand(disc);
+                    printStands(stand1, stand2, stand3);
+                    stand3.putDiscOnStand(disc.getValue());
                     stand3.checkIfDiscsAreSequential();
-                    disc = 0;
+                    disc.setValue(0);
                     break;
             }
 
@@ -77,7 +78,7 @@ public class App {
 
     }
 
-    private static void aaaaa(Stand stand1, Stand stand2, Stand stand3) {
+    private static void printStands(Stand stand1, Stand stand2, Stand stand3) {
         stand1.printStand();
         stand2.printStand();
         stand3.printStand();

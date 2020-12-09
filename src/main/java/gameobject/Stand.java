@@ -17,7 +17,7 @@ public class Stand {
         return standNumber;
     }
 
-    public void setDiscs(){
+    public void setDiscValues(){
         standAsArray.add(1);
         standAsArray.add(2);
         standAsArray.add(3);
@@ -49,7 +49,5 @@ public class Stand {
             System.out.println("YOU WON!!!");
             System.exit(0);
         }
-
-
     }
 }
