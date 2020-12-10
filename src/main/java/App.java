@@ -83,10 +83,7 @@ public class App {
     }
 
     private static boolean checkIfDiscValueIsZero(Disc disc) {
-        if (disc.getValue() == 0){
-            return true;
-        }
-        return false;
+        return disc.getValue() == 0;
     }
 
 }
