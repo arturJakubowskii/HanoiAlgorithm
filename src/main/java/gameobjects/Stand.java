@@ -1,4 +1,4 @@
-package gameobject;
+package gameobjects;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,6 @@ public class Stand {
 
     private final List<Integer> standAsArray = new ArrayList<>();
 
-    public int getStandNumber() {
-        return standNumber;
-    }
 
     public void setDiscValues(){
         standAsArray.add(1);
@@ -35,9 +32,16 @@ public class Stand {
     }
 
     public int takeDiscFromStand(){
-        int disc = standAsArray.get(standAsArray.size() -1);
-        standAsArray.remove(standAsArray.size() -1);
-        return disc;
+        try {
+            int disc = standAsArray.get(standAsArray.size() -1);
+            standAsArray.remove(standAsArray.size() -1);
+            return disc;
+        }
+        catch (Exception e){
+            System.out.println("You can't take disc from empty stand!");
+            return 0;
+        }
+
     }
 
     public void checkIfDiscsAreSequential(){
@@ -45,9 +49,10 @@ public class Stand {
         int lastDiscValue = standAsArray.get(standAsArray.size() -1);
 
         if (firstDiscValue == 3
-                && lastDiscValue == 1){
+                && lastDiscValue == 1 && standAsArray.size() == 3){
             System.out.println("YOU WON!!!");
             System.exit(0);
         }
     }
+
 }

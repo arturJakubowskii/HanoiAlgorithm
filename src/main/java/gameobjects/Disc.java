@@ -1,4 +1,4 @@
-package gameobject;
+package gameobjects;
 
 public class Disc {
 
@@ -13,5 +13,6 @@ public class Disc {
 
     public void setValue(int value) {
         this.value = value;
+
     }
 }
